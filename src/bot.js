@@ -9,14 +9,18 @@ client.on("ready", () => {
   console.log(`${client.user.tag} has logged in`)
 })
 
-client.on("message", (message) => {
-  if(message.author.bot) return
-  if(message.content.startsWith(prefix)){
-    const cmd = message.content
-      .trim(4)
+client.on("message", (msg) => {
+  if(msg.author.bot) return
+  if(msg.content.startsWith(prefix)){
+    const [cmd, ...args] = msg.content
+      .trim()
       .substring(prefix.length)
       .split(/\s+/)
-    console.log(cmd)
+    console.log(cmd, args)
+
+    if(cmd==='kick'){
+      
+    }
   }
 })
 
