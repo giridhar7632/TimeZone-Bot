@@ -3,11 +3,24 @@ require('dotenv').config()
 const { Client } = require('discord.js')
 const client = new Client()
 const prefix="$"
-const def="ist"
 
 client.on("ready", () => {
   console.log(`${client.user.tag} has logged in`)
 })
+
+function changeTimezone(hr, min) {
+  let date = new Date()
+  date.setHours(hr)
+  date.setMinutes(min)
+  console.log('Given IST datetime: ' + date);
+
+  let usaTime = date.toLocaleString("en-US", {
+    timeZone: "America/New_York"
+  })  
+
+  console.log('USA datetime: ' + usaTime)
+}
+
 
 client.on("message", (msg) => {
   if(msg.author.bot) return
@@ -17,9 +30,9 @@ client.on("message", (msg) => {
       .substring(prefix.length)
       .split(/\s+/)
     console.log(cmd, args)
-
-    if(cmd==='kick'){
-      
+    if(cmd==='est'){
+      changeTimezone(4, 30)
+      console.log("hello world!")
     }
   }
 })
