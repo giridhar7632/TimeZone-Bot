@@ -1,7 +1,8 @@
 var Time = /** @class */ (function () {
     function Time(hr, min) {
         if (min >= 60 || hr >= 24) {
-            throw new Error("invalid input x_x");
+            console.log("invalid input x_x");
+            process.exit(1);
         }
         else {
             this.hr = hr;
@@ -38,6 +39,10 @@ readline.question('Enter time: ', function (x) {
     var _a = x.split(/\s+/), hr = _a[0], min = _a[1];
     t2.hr = Number(hr);
     t2.min = Number(min);
+    if (t2.min >= 60 || t2.hr >= 24) {
+        console.log("invalid input x_x");
+        process.exit(1);
+    }
     t2.display();
     readline.question('Enter the time-zone: ', function (time) {
         time = time.toLowerCase();

@@ -3,7 +3,8 @@ class Time {
   min: number
   constructor(hr: number, min: number) {
     if (min >= 60 || hr >= 24) {
-      throw new Error("invalid input x_x")
+      console.log("invalid input x_x")
+      process.exit(1)
     }
     else {
       this.hr = hr
@@ -42,6 +43,10 @@ readline.question('Enter time: ', (x: string) => {
   let [hr, min] = x.split(/\s+/)
   t2.hr = Number(hr)
   t2.min = Number(min)
+  if (t2.min >= 60 || t2.hr >= 24) {
+    console.log("invalid time x_x")
+    process.exit(1)
+  }
   t2.display()
 
   readline.question('Enter the time-zone: ', (time: string) => {
