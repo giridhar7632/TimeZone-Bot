@@ -25,6 +25,8 @@ function changeTimezone(hr, min) {
 client.on("message", (msg) => {
   if(msg.author.bot) return
   if(msg.content.startsWith(prefix)){
+    changeTimezone(4, 30)
+    console.log("hello world!")
     const [cmd, ...args] = msg.content
       .trim()
       .substring(prefix.length)
