@@ -1,16 +1,35 @@
-{
-  "compilerOptions": {
-    "target": "es6",
-    "lib": ["esnext", "dom"],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "strict": true,
-    "jsx": "react",
-    "allowJs": true,
-    "sourceMap": true,
-    "inlineSources": true,
-    "types": ["node"],
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true
-  }
+{ 
+  "compilerOptions":{
+     "target":"es6",
+     "downlevelIteration":true,
+     "moduleResolution":"node",
+     "module":"commonjs",
+     "declaration":false,
+     "noLib":false,
+     "emitDecoratorMetadata":true,
+     "experimentalDecorators":true,
+     "sourceMap":true,
+     "pretty":true,
+     "allowUnreachableCode":true,
+     "allowUnusedLabels":true,
+     "noImplicitAny":true,
+     "strictNullChecks": true,
+     "strictFunctionTypes": true,
+     "strictPropertyInitialization": true,
+     "noImplicitThis": true,
+     "noImplicitReturns":false,
+     "noImplicitUseStrict":false,
+     "outDir":"dist/",
+     "baseUrl":"src/",
+     "listFiles":false,
+     "noEmitHelpers":true
+  },
+  "include":[ 
+     "src/**/*"
+  ],
+  "exclude":[ 
+     "node_modules",
+     ".vscode"
+  ],
+  "compileOnSave":false
 }
