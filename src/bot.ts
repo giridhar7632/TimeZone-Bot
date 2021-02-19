@@ -18,6 +18,8 @@ client.on("message", (msg: Message) => {
     console.log(cmd)
     let result = converter(cmd)
     msg.channel.send(`@${msg.author.username} ${result}`)
+      .then(message => console.log(`Sent message: ${message.content}`))
+      .catch(console.error)
     console.log(result)
   }
 })

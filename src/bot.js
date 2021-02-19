@@ -19,7 +19,8 @@ client.on("message", function (msg) {
             .substring(prefix.length);
         console.log(cmd);
         var result = converter_1.converter(cmd);
-        msg.channel.send("@" + msg.author.username + " " + result);
+        msg.channel.send("@" + msg.author.username + " " + result)
+            .then(function (message) { return console.log("Sent message: " + message.content); })["catch"](console.error);
         console.log(result);
     }
 });
