@@ -17,6 +17,7 @@ client.on("message", (msg: Message) => {
       .substring(prefix.length)
     console.log(cmd)
     let result = converter(cmd)
+    msg.channel.send(`@${msg.author.username} ${result}`)
     console.log(result)
   }
 })

@@ -19,6 +19,7 @@ client.on("message", function (msg) {
             .substring(prefix.length);
         console.log(cmd);
         var result = converter_1.converter(cmd);
+        msg.channel.send("@" + msg.author.username + " " + result);
         console.log(result);
     }
 });

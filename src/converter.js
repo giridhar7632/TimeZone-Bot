@@ -93,7 +93,7 @@ function converter(a) {
     }
     else {
         console.log("x_x");
-        return null;
+        return "\u26A0 Something worng x_x";
     }
 }
 exports.converter = converter;

@@ -96,7 +96,7 @@ function converter (a: string) {
       return `It's ${disp} in ${toZone.toUpperCase()}`
     } else{
       console.log("x_x")
-      return null
+      return `⚠ Something worng x_x`
     }
 }
 
