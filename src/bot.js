@@ -24,4 +24,6 @@ client.on("message", function (msg) {
         console.log(result);
     }
 });
-client.login(process.env.DISCORD_BOT_TOKEN);
+client.login(process.env.DISCORD_BOT_TOKEN)["catch"](function (e) {
+    return console.log("Error in logging in x_x");
+});
