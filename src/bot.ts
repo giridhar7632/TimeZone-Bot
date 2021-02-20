@@ -17,7 +17,7 @@ client.on("message", (msg: Message) => {
       .substring(prefix.length)
     console.log(cmd)
     let result = converter(cmd)
-    msg.channel.send(`@${msg.author.username} ${result}`)
+    msg.channel.send(`<@${msg.author.id}> ${result}`)
       .then(message => console.log(`Sent message: ${message.content}`))
       .catch(console.error)
     console.log(result)
